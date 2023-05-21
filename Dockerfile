@@ -6,6 +6,10 @@ RUN apt-get update \
     && rm -rf /tmp/* /var/cache/* \
     && mkdir -p /var/log/apps
 
+
+COPY . /webapps
+WORKDIR /webapps
+
 RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "tail", "-f", "/dev/null"]
