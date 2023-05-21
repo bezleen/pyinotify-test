@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  api:
+    container_name: pyinotify
+    build: .
+    restart: on-failure
+    volumes:
+      - ./test/:/webapps/test
+    environment:
+      - PYTHONUNBUFFERED=true
+    env_file:
+      - .env
+
