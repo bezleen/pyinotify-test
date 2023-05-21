@@ -14,8 +14,6 @@ import os.path as op
 import traceback
 import datetime
 
-
-import sentry_sdk  # nopep8
 SENTRY_DSN = os.getenv("SENTRY_DSN")
 if SENTRY_DSN:
     sentry_sdk.init(SENTRY_DSN)
